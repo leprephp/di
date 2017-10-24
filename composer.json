@@ -25,5 +25,8 @@
         "psr-4": {
             "Lepre\\Component\\DI\\Tests\\": "tests/"
         }
+    },
+    "provide": {
+        "psr/container-implementation": "1.0"
     }
 }
