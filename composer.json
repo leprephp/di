@@ -1,0 +1,29 @@
+{
+    "name": "lepre/di",
+    "description": "A simple Dependency Injection Container, PSR-11 compliant.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Daniele De Nobili",
+            "email": "danieledenobili@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.0",
+        "psr/container": "^1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lepre\\Component\\DI\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Lepre\\Component\\DI\\Tests\\": "tests/"
+        }
+    }
+}
