@@ -28,5 +28,10 @@
     },
     "provide": {
         "psr/container-implementation": "1.0"
+    },
+    "scripts": {
+        "test": [
+            "phpunit"
+        ]
     }
 }

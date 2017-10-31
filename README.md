@@ -1,4 +1,4 @@
-# Lepre DI
+# Lepre DI [![Build Status](https://travis-ci.org/leprephp/di.svg?branch=master)](https://travis-ci.org/leprephp/di)
 
 A simple Dependency Injection Container, [PSR-11][psr11] compliant.
 
