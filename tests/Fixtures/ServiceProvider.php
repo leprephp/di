@@ -11,10 +11,10 @@
 
 declare(strict_types=1);
 
-namespace Lepre\Component\DI\Tests\Fixtures;
+namespace Lepre\DI\Tests\Fixtures;
 
-use Lepre\Component\DI\Container;
-use Lepre\Component\DI\ServiceProviderInterface;
+use Lepre\DI\Container;
+use Lepre\DI\ServiceProviderInterface;
 
 class ServiceProvider implements ServiceProviderInterface
 {

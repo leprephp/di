@@ -11,9 +11,9 @@
 
 declare(strict_types=1);
 
-namespace Lepre\Component\DI;
+namespace Lepre\DI;
 
-use Lepre\Component\DI\Exception\FrozenContainerException;
+use Lepre\DI\Exception\FrozenContainerException;
 use Psr\Container\ContainerInterface;
 
 /**

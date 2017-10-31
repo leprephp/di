@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace Lepre\Component\DI\Exception;
+namespace Lepre\DI\Exception;
 
 use Psr\Container\NotFoundExceptionInterface;
 

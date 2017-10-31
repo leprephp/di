@@ -17,7 +17,7 @@ This project works with PHP 7.0 or above.
 ## Basic Usage
 
 ```php
-use Lepre\Component\DI\Container;
+use Lepre\DI\Container;
 
 $container = new Container();
 

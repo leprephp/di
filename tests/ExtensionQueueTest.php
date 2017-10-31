@@ -11,15 +11,15 @@
 
 declare(strict_types=1);
 
-namespace Lepre\Component\DI\Tests;
+namespace Lepre\DI\Tests;
 
-use Lepre\Component\DI\Container;
-use Lepre\Component\DI\ExtensionQueue;
-use Lepre\Component\DI\Tests\Fixtures\Service;
+use Lepre\DI\Container;
+use Lepre\DI\ExtensionQueue;
+use Lepre\DI\Tests\Fixtures\Service;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers \Lepre\Component\DI\ExtensionQueue
+ * @covers \Lepre\DI\ExtensionQueue
  */
 class ExtensionQueueTest extends TestCase
 {

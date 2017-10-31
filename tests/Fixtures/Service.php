@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace Lepre\Component\DI\Tests\Fixtures;
+namespace Lepre\DI\Tests\Fixtures;
 
 class Service
 {

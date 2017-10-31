@@ -18,12 +18,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Lepre\\Component\\DI\\": "src/"
+            "Lepre\\DI\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Lepre\\Component\\DI\\Tests\\": "tests/"
+            "Lepre\\DI\\Tests\\": "tests/"
         }
     },
     "provide": {

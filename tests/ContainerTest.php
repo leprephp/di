@@ -11,18 +11,18 @@
 
 declare(strict_types=1);
 
-namespace Lepre\Component\DI\Tests;
+namespace Lepre\DI\Tests;
 
-use Lepre\Component\DI\Container;
-use Lepre\Component\DI\Tests\Fixtures\Invokable;
-use Lepre\Component\DI\Tests\Fixtures\Service;
-use Lepre\Component\DI\Tests\Fixtures\ServiceProvider;
-use Lepre\Component\DI\Tests\Fixtures\ServiceWithDependencies;
+use Lepre\DI\Container;
+use Lepre\DI\Tests\Fixtures\Invokable;
+use Lepre\DI\Tests\Fixtures\Service;
+use Lepre\DI\Tests\Fixtures\ServiceProvider;
+use Lepre\DI\Tests\Fixtures\ServiceWithDependencies;
 use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
 
 /**
- * @covers \Lepre\Component\DI\Container
+ * @covers \Lepre\DI\Container
  */
 class ContainerTest extends TestCase
 {
@@ -54,8 +54,8 @@ class ContainerTest extends TestCase
     }
 
     /**
-     * @covers \Lepre\Component\DI\Exception\NotFoundException
-     * @expectedException \Lepre\Component\DI\Exception\NotFoundException
+     * @covers \Lepre\DI\Exception\NotFoundException
+     * @expectedException \Lepre\DI\Exception\NotFoundException
      * @expectedExceptionMessage Service "undefined" not exists.
      */
     public function testGetCheckIfKeyIsPresent()
@@ -273,8 +273,8 @@ class ContainerTest extends TestCase
     }
 
     /**
-     * @covers \Lepre\Component\DI\Exception\NotFoundException
-     * @expectedException \Lepre\Component\DI\Exception\NotFoundException
+     * @covers \Lepre\DI\Exception\NotFoundException
+     * @expectedException \Lepre\DI\Exception\NotFoundException
      * @expectedExceptionMessage Service "undefined" not exists.
      */
     public function testGetNewValidatesKeyIsPresent()
@@ -304,8 +304,8 @@ class ContainerTest extends TestCase
     }
 
     /**
-     * @covers \Lepre\Component\DI\Exception\NotFoundException
-     * @expectedException \Lepre\Component\DI\Exception\NotFoundException
+     * @covers \Lepre\DI\Exception\NotFoundException
+     * @expectedException \Lepre\DI\Exception\NotFoundException
      * @expectedExceptionMessage Service "undefined" not exists.
      */
     public function testRawValidatesKeyIsPresent()
@@ -488,8 +488,8 @@ class ContainerTest extends TestCase
     }
 
     /**
-     * @covers \Lepre\Component\DI\Exception\FrozenContainerException
-     * @expectedException \Lepre\Component\DI\Exception\FrozenContainerException
+     * @covers \Lepre\DI\Exception\FrozenContainerException
+     * @expectedException \Lepre\DI\Exception\FrozenContainerException
      * @expectedExceptionMessage The container is frozen and is not possible to define the new service "service-name".
      */
     public function testSetServiceOnFrozenContainer()
@@ -501,8 +501,8 @@ class ContainerTest extends TestCase
     }
 
     /**
-     * @covers \Lepre\Component\DI\Exception\FrozenContainerException
-     * @expectedException \Lepre\Component\DI\Exception\FrozenContainerException
+     * @covers \Lepre\DI\Exception\FrozenContainerException
+     * @expectedException \Lepre\DI\Exception\FrozenContainerException
      * @expectedExceptionMessage The container is frozen and is not possible to extend the service "service-name".
      */
     public function testExtendOnFrozenContainer()
@@ -525,9 +525,9 @@ class ContainerTest extends TestCase
     }
 
     /**
-     * @covers \Lepre\Component\DI\Exception\FrozenContainerException
-     * @expectedException \Lepre\Component\DI\Exception\FrozenContainerException
-     * @expectedExceptionMessage The container is frozen and is not possible to register the provider "Lepre\Component\DI\Tests\Fixtures\ServiceProvider".
+     * @covers \Lepre\DI\Exception\FrozenContainerException
+     * @expectedException \Lepre\DI\Exception\FrozenContainerException
+     * @expectedExceptionMessage The container is frozen and is not possible to register the provider "Lepre\DI\Tests\Fixtures\ServiceProvider".
      */
     public function testRegisterProviderOnFrozenContainer()
     {
