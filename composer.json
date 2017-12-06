@@ -1,6 +1,7 @@
 {
     "name": "lepre/di",
     "description": "A simple Dependency Injection Container, PSR-11 compliant.",
+    "homepage": "https://github.com/leprephp/di",
     "type": "library",
     "license": "MIT",
     "authors": [
