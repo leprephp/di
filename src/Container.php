@@ -21,7 +21,7 @@ use Psr\Container\ContainerInterface;
  *
  * @author Daniele De Nobili <danieledenobili@gmail.com>
  */
-class Container implements ContainerInterface
+final class Container implements ContainerInterface
 {
     /**
      * @var array

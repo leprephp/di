@@ -18,7 +18,7 @@ namespace Lepre\DI;
  *
  * @author Daniele De Nobili <danieledenobili@gmail.com>
  */
-class ExtensionQueue
+final class ExtensionQueue
 {
     /**
      * @var array

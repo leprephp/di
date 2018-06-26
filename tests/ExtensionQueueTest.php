@@ -25,10 +25,9 @@ class ExtensionQueueTest extends TestCase
 {
     public function testQueue()
     {
-        /** @var Container $container */
-        $container = $this->createMock(Container::class);
-
-        $queue = new ExtensionQueue($container);
+        $queue = new ExtensionQueue(
+            new Container()
+        );
 
         $queue->add(
             function (Service $service) {
