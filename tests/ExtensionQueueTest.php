@@ -21,7 +21,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * @covers \Lepre\DI\ExtensionQueue
  */
-class ExtensionQueueTest extends TestCase
+final class ExtensionQueueTest extends TestCase
 {
     public function testQueue()
     {

@@ -20,7 +20,7 @@ use Psr\Container\NotFoundExceptionInterface;
  *
  * @author Daniele De Nobili <danieledenobili@gmail.com>
  */
-class NotFoundException extends \InvalidArgumentException implements NotFoundExceptionInterface
+final class NotFoundException extends \InvalidArgumentException implements NotFoundExceptionInterface
 {
     /**
      * @param string          $id

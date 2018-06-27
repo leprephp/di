@@ -18,6 +18,6 @@ namespace Lepre\DI\Exception;
  *
  * @author Daniele De Nobili <danieledenobili@gmail.com>
  */
-class FrozenContainerException extends \BadMethodCallException
+final class FrozenContainerException extends \BadMethodCallException
 {
 }

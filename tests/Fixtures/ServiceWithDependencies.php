@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 namespace Lepre\DI\Tests\Fixtures;
 
-class ServiceWithDependencies
+final class ServiceWithDependencies
 {
     public $foo;
     public $bar;

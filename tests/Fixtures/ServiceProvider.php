@@ -16,7 +16,7 @@ namespace Lepre\DI\Tests\Fixtures;
 use Lepre\DI\Container;
 use Lepre\DI\ServiceProviderInterface;
 
-class ServiceProvider implements ServiceProviderInterface
+final class ServiceProvider implements ServiceProviderInterface
 {
     public function register(Container $container)
     {

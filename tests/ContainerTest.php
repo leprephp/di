@@ -24,7 +24,7 @@ use Psr\Container\ContainerInterface;
 /**
  * @covers \Lepre\DI\Container
  */
-class ContainerTest extends TestCase
+final class ContainerTest extends TestCase
 {
     public function testPsrContainer()
     {

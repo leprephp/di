@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 namespace Lepre\DI\Tests\Fixtures;
 
-class Invokable
+final class Invokable
 {
     public function __invoke()
     {
