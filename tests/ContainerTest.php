@@ -56,7 +56,7 @@ final class ContainerTest extends TestCase
     /**
      * @covers \Lepre\DI\Exception\NotFoundException
      * @expectedException \Lepre\DI\Exception\NotFoundException
-     * @expectedExceptionMessage Service "undefined" not exists.
+     * @expectedExceptionMessage The service "undefined" does not exist.
      */
     public function testGetCheckIfKeyIsPresent()
     {
@@ -275,7 +275,7 @@ final class ContainerTest extends TestCase
     /**
      * @covers \Lepre\DI\Exception\NotFoundException
      * @expectedException \Lepre\DI\Exception\NotFoundException
-     * @expectedExceptionMessage Service "undefined" not exists.
+     * @expectedExceptionMessage The service "undefined" does not exist.
      */
     public function testGetNewValidatesKeyIsPresent()
     {
@@ -306,7 +306,7 @@ final class ContainerTest extends TestCase
     /**
      * @covers \Lepre\DI\Exception\NotFoundException
      * @expectedException \Lepre\DI\Exception\NotFoundException
-     * @expectedExceptionMessage Service "undefined" not exists.
+     * @expectedExceptionMessage The service "undefined" does not exist.
      */
     public function testRawValidatesKeyIsPresent()
     {
@@ -471,7 +471,7 @@ final class ContainerTest extends TestCase
 
     /**
      * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Service "undefined" does not exist.
+     * @expectedExceptionMessage The service "undefined" does not exist.
      */
     public function testExtendValidatesKeyIsPresent()
     {

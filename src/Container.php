@@ -81,7 +81,7 @@ final class Container implements ContainerInterface
     {
         if ($this->frozen) {
             throw new FrozenContainerException(
-                sprintf('The container is frozen and is not possible to define the new service "%s".', $id)
+                "The container is frozen and is not possible to define the new service \"{$id}\"."
             );
         }
 
@@ -165,14 +165,14 @@ final class Container implements ContainerInterface
     {
         if ($this->frozen) {
             throw new FrozenContainerException(
-                sprintf('The container is frozen and is not possible to extend the service "%s".', $id)
+                "The container is frozen and is not possible to extend the service \"{$id}\"."
             );
         }
 
         $id = $this->getRealId($id);
 
         if (!array_key_exists($id, $this->definitions)) {
-            throw new \InvalidArgumentException(sprintf('Service "%s" does not exist.', $id));
+            throw new \InvalidArgumentException("The service \"{$id}\" does not exist.");
         }
 
         if (!isset($this->extensionQueues[$id])) {
@@ -194,10 +194,7 @@ final class Container implements ContainerInterface
     {
         if ($this->frozen) {
             throw new FrozenContainerException(
-                sprintf(
-                    'The container is frozen and is not possible to register the provider "%s".',
-                    get_class($provider)
-                )
+                'The container is frozen and is not possible to register the provider "' . get_class($provider) . '".'
             );
         }
 

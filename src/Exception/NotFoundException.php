@@ -29,6 +29,6 @@ final class NotFoundException extends \InvalidArgumentException implements NotFo
      */
     public function __construct($id, $code = 0, \Exception $previous = null)
     {
-        parent::__construct(sprintf('Service "%s" not exists.', $id), $code, $previous);
+        parent::__construct("The service \"{$id}\" does not exist.", $code, $previous);
     }
 }
