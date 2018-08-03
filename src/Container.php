@@ -76,8 +76,6 @@ final class Container implements ContainerInterface
      * @param string $id
      * @param mixed  $service
      * @return $this
-     *
-     * @api
      */
     public function set(string $id, $service)
     {
@@ -102,8 +100,6 @@ final class Container implements ContainerInterface
      * @param string $alias
      * @param string $original
      * @return $this
-     *
-     * @api
      */
     public function alias(string $alias, string $original)
     {
@@ -118,8 +114,6 @@ final class Container implements ContainerInterface
      * @param string $id
      * @return mixed
      * @throws \InvalidArgumentException
-     *
-     * @api
      */
     public function getNew(string $id)
     {
@@ -166,8 +160,6 @@ final class Container implements ContainerInterface
      * @param callable $callable
      * @return $this
      * @throws \InvalidArgumentException
-     *
-     * @api
      */
     public function extend(string $id, callable $callable)
     {
