@@ -149,11 +149,11 @@ final class Container implements ContainerInterface
     {
         $id = $this->getRealId($id);
 
-        if (!array_key_exists($id, $this->definitions)) {
-            throw new Exception\NotFoundException($id);
+        if (array_key_exists($id, $this->definitions)) {
+            return $this->definitions[$id];
         }
 
-        return $this->definitions[$id];
+        throw new Exception\NotFoundException($id);
     }
 
     /**
