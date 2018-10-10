@@ -1,6 +1,9 @@
 **🚧 This project is in early development stage and it could change significantly in the future.**
 
-# Lepre DI [![Build Status](https://travis-ci.org/leprephp/di.svg?branch=master)](https://travis-ci.org/leprephp/di)
+# Lepre DI
+
+[![Build Status](https://travis-ci.org/leprephp/di.svg?branch=master)](https://travis-ci.org/leprephp/di)
+[![Coverage Status](https://coveralls.io/repos/github/leprephp/di/badge.svg?branch=master)](https://coveralls.io/github/leprephp/di?branch=master)
 
 A simple Dependency Injection Container, [PSR-11][psr11] compliant.
 
