@@ -17,7 +17,7 @@ use Lepre\DI\Exception\FrozenContainerException;
 use Psr\Container\ContainerInterface;
 
 /**
- * Container.
+ * The Dependency Injection Container.
  *
  * @author Daniele De Nobili <danieledenobili@gmail.com>
  */

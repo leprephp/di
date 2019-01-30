@@ -14,7 +14,7 @@ declare(strict_types=1);
 namespace Lepre\DI;
 
 /**
- * ExtensionsQueue
+ * The extension queue allows you to extend a service.
  *
  * @author Daniele De Nobili <danieledenobili@gmail.com>
  */

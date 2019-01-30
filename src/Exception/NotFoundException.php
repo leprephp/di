@@ -16,7 +16,7 @@ namespace Lepre\DI\Exception;
 use Psr\Container\NotFoundExceptionInterface;
 
 /**
- * NotFoundException
+ * @inheritDoc
  *
  * @author Daniele De Nobili <danieledenobili@gmail.com>
  */

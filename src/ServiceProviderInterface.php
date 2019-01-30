@@ -14,7 +14,9 @@ declare(strict_types=1);
 namespace Lepre\DI;
 
 /**
- * ServiceProviderInterface.
+ * Service Provider Interface.
+ *
+ * This class is loosely based on the Pimple project {@link https://github.com/silexphp/Pimple}
  *
  * @author Daniele De Nobili <danieledenobili@gmail.com>
  */

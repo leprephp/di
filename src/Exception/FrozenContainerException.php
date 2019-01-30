@@ -14,7 +14,7 @@ declare(strict_types=1);
 namespace Lepre\DI\Exception;
 
 /**
- * FrozenContainerException
+ * This exception is thrown when you try to extend the container, but it is already frozen.
  *
  * @author Daniele De Nobili <danieledenobili@gmail.com>
  */
