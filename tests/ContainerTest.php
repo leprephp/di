@@ -14,12 +14,15 @@ declare(strict_types=1);
 namespace Lepre\DI\Tests;
 
 use Lepre\DI\Container;
+use Lepre\DI\Exception\FrozenContainerException;
+use Lepre\DI\Exception\NotFoundException;
 use Lepre\DI\Tests\Fixtures\Invokable;
 use Lepre\DI\Tests\Fixtures\Service;
 use Lepre\DI\Tests\Fixtures\ServiceProvider;
 use Lepre\DI\Tests\Fixtures\ServiceWithDependencies;
 use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
+use Psr\Container\NotFoundExceptionInterface;
 
 /**
  * @covers \Lepre\DI\Container
@@ -33,11 +36,10 @@ final class ContainerTest extends TestCase
         $this->assertInstanceOf(ContainerInterface::class, $container);
     }
 
-    /**
-     * @expectedException \Psr\Container\NotFoundExceptionInterface
-     */
     public function testPsrNotFoundException()
     {
+        $this->expectException(NotFoundExceptionInterface::class);
+
         $container = new Container();
         $container->get('undefined');
     }
@@ -55,11 +57,12 @@ final class ContainerTest extends TestCase
 
     /**
      * @covers \Lepre\DI\Exception\NotFoundException
-     * @expectedException \Lepre\DI\Exception\NotFoundException
-     * @expectedExceptionMessage The service "undefined" does not exist.
      */
     public function testGetCheckIfKeyIsPresent()
     {
+        $this->expectException(NotFoundException::class);
+        $this->expectExceptionMessage('The service "undefined" does not exist.');
+
         $container = new Container();
         $container->get('undefined');
     }
@@ -274,11 +277,12 @@ final class ContainerTest extends TestCase
 
     /**
      * @covers \Lepre\DI\Exception\NotFoundException
-     * @expectedException \Lepre\DI\Exception\NotFoundException
-     * @expectedExceptionMessage The service "undefined" does not exist.
      */
     public function testGetNewValidatesKeyIsPresent()
     {
+        $this->expectException(NotFoundException::class);
+        $this->expectExceptionMessage('The service "undefined" does not exist.');
+
         $container = new Container();
         $container->getNew('undefined');
     }
@@ -305,11 +309,12 @@ final class ContainerTest extends TestCase
 
     /**
      * @covers \Lepre\DI\Exception\NotFoundException
-     * @expectedException \Lepre\DI\Exception\NotFoundException
-     * @expectedExceptionMessage The service "undefined" does not exist.
      */
     public function testRawValidatesKeyIsPresent()
     {
+        $this->expectException(NotFoundException::class);
+        $this->expectExceptionMessage('The service "undefined" does not exist.');
+
         $container = new Container();
         $container->raw('undefined');
     }
@@ -469,12 +474,11 @@ final class ContainerTest extends TestCase
         $this->assertEquals([1, 2, 3, 4], $container->get('service'));
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage The service "undefined" does not exist.
-     */
     public function testExtendValidatesKeyIsPresent()
     {
+        $this->expectException(\InvalidArgumentException::class);
+        $this->expectExceptionMessage('The service "undefined" does not exist.');
+
         $container = new Container();
         $container->extend('undefined', function () {});
     }
@@ -489,11 +493,12 @@ final class ContainerTest extends TestCase
 
     /**
      * @covers \Lepre\DI\Exception\FrozenContainerException
-     * @expectedException \Lepre\DI\Exception\FrozenContainerException
-     * @expectedExceptionMessage The container is frozen and is not possible to define the new service "service-name".
      */
     public function testSetServiceOnFrozenContainer()
     {
+        $this->expectException(FrozenContainerException::class);
+        $this->expectExceptionMessage('The container is frozen and is not possible to define the new service "service-name".');
+
         $container = new Container();
         $container->freeze();
 
@@ -502,11 +507,12 @@ final class ContainerTest extends TestCase
 
     /**
      * @covers \Lepre\DI\Exception\FrozenContainerException
-     * @expectedException \Lepre\DI\Exception\FrozenContainerException
-     * @expectedExceptionMessage The container is frozen and is not possible to extend the service "service-name".
      */
     public function testExtendOnFrozenContainer()
     {
+        $this->expectException(FrozenContainerException::class);
+        $this->expectExceptionMessage('The container is frozen and is not possible to extend the service "service-name".');
+
         $container = new Container();
         $container->freeze();
 
@@ -526,11 +532,12 @@ final class ContainerTest extends TestCase
 
     /**
      * @covers \Lepre\DI\Exception\FrozenContainerException
-     * @expectedException \Lepre\DI\Exception\FrozenContainerException
-     * @expectedExceptionMessage The container is frozen and is not possible to register the provider "Lepre\DI\Tests\Fixtures\ServiceProvider".
      */
     public function testRegisterProviderOnFrozenContainer()
     {
+        $this->expectException(FrozenContainerException::class);
+        $this->expectExceptionMessage('The container is frozen and is not possible to register the provider "Lepre\\DI\\Tests\\Fixtures\\ServiceProvider".');
+
         $container = new Container();
         $container->freeze();
 
