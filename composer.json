@@ -1,15 +1,29 @@
 {
     "name": "lepre/di",
     "description": "A simple Dependency Injection Container, PSR-11 compliant.",
+    "keywords": [
+        "container",
+        "dependency injection",
+        "dependency injection container",
+        "di",
+        "di container",
+        "dic",
+        "psr-11"
+    ],
     "homepage": "https://github.com/leprephp/di",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
             "name": "Daniele De Nobili",
-            "email": "danieledenobili@gmail.com"
+            "email": "danieledenobili@gmail.com",
+            "role": "Developer"
         }
     ],
+    "support": {
+        "source": "https://github.com/leprephp/di",
+        "issues": "https://github.com/leprephp/di/issues"
+    },
     "require": {
         "php": "^7.1",
         "psr/container": "^1.0"
