@@ -55,4 +55,13 @@ final class ExtensionQueueTest extends TestCase
 
         $this->assertEquals('abc', $service->getParameter());
     }
+
+    public function testAddReturnsTheExtensionQueue()
+    {
+        $queue = new ExtensionQueue(
+            new Container()
+        );
+
+        $this->assertSame($queue, $queue->add(function () {}));
+    }
 }

@@ -50,9 +50,16 @@ final class ContainerTest extends TestCase
 
         $this->assertFalse($container->has('service'));
 
-        $this->assertSame($container, $container->set('service', 'value'));
+        $container->set('service', 'value');
+
         $this->assertTrue($container->has('service'));
         $this->assertEquals('value', $container->get('service'));
+    }
+
+    public function testSetReturnsTheContainer()
+    {
+        $container = new Container();
+        $this->assertSame($container, $container->set('service', 'value'));
     }
 
     /**
@@ -169,6 +176,14 @@ final class ContainerTest extends TestCase
         $this->assertSame($container->get('original'), $container->get('alias'));
         $this->assertSame($container->raw('original'), $container->raw('alias'));
         $this->assertInstanceOf(Service::class, $container->getNew('alias'));
+    }
+
+    public function testAliasReturnsTheContainer()
+    {
+        $container = new Container();
+        $container->set('original', 'value');
+
+        $this->assertSame($container, $container->alias('alias', 'original'));
     }
 
     public function testCyclicAlias()
@@ -340,6 +355,14 @@ final class ContainerTest extends TestCase
         $this->assertEquals('test parameter', $container->get('service')->getParameter());
     }
 
+    public function testExtendReturnsTheContainer()
+    {
+        $container = new Container();
+        $container->set('service', 'value');
+
+        $this->assertSame($container, $container->extend('service', function ($service) { return $service; }));
+    }
+
     public function testExtensionQueueIsCalledOnlyOnce()
     {
         $container = new Container();
@@ -505,6 +528,12 @@ final class ContainerTest extends TestCase
         $container->set('service-name', function () {});
     }
 
+    public function testFreezeReturnsTheContainer()
+    {
+        $container = new Container();
+        $this->assertSame($container, $container->freeze());
+    }
+
     /**
      * @covers \Lepre\DI\Exception\FrozenContainerException
      */
@@ -528,6 +557,13 @@ final class ContainerTest extends TestCase
         $this->assertTrue($container->has('service'));
         $this->assertInstanceOf(Service::class, $container->get('service'));
         $this->assertSame($container->get('service'), $container->get('service'));
+    }
+
+    public function testRegisterReturnsTheContainer()
+    {
+        $container = new Container();
+
+        $this->assertSame($container, $container->register(new ServiceProvider()));
     }
 
     /**
