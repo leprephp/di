@@ -23,12 +23,12 @@ final class ExtensionQueue
     /**
      * @var array
      */
-    protected $queue = [];
+    private $queue = [];
 
     /**
      * @var Container
      */
-    protected $container;
+    private $container;
 
     /**
      * @param Container $container
