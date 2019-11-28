@@ -77,7 +77,7 @@ final class Container implements ContainerInterface
      * @param mixed  $service
      * @return $this
      */
-    public function set(string $id, $service)
+    public function set(string $id, $service): Container
     {
         if ($this->frozen) {
             throw new FrozenContainerException(
@@ -101,7 +101,7 @@ final class Container implements ContainerInterface
      * @param string $original
      * @return $this
      */
-    public function alias(string $alias, string $original)
+    public function alias(string $alias, string $original): Container
     {
         $this->aliases[$alias] = $this->getRealId($original);
 
@@ -161,7 +161,7 @@ final class Container implements ContainerInterface
      * @return $this
      * @throws \InvalidArgumentException
      */
-    public function extend(string $id, callable $callable)
+    public function extend(string $id, callable $callable): Container
     {
         if ($this->frozen) {
             throw new FrozenContainerException(
@@ -190,7 +190,7 @@ final class Container implements ContainerInterface
      * @param ServiceProviderInterface $provider
      * @return $this
      */
-    public function register(ServiceProviderInterface $provider)
+    public function register(ServiceProviderInterface $provider): Container
     {
         if ($this->frozen) {
             throw new FrozenContainerException(
@@ -206,7 +206,7 @@ final class Container implements ContainerInterface
     /**
      * @return $this
      */
-    public function freeze()
+    public function freeze(): Container
     {
         $this->frozen = true;
 

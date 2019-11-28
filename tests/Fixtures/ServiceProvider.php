@@ -18,7 +18,7 @@ use Lepre\DI\ServiceProviderInterface;
 
 final class ServiceProvider implements ServiceProviderInterface
 {
-    public function register(Container $container)
+    public function register(Container $container): void
     {
         $container->set('service', function () {
             return new Service();

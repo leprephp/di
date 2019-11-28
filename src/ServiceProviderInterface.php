@@ -30,5 +30,5 @@ interface ServiceProviderInterface
      *
      * @param Container $container A Container instance
      */
-    public function register(Container $container);
+    public function register(Container $container): void;
 }

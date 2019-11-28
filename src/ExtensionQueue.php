@@ -44,7 +44,7 @@ final class ExtensionQueue
      * @param callable $callable
      * @return $this
      */
-    public function add(callable $callable)
+    public function add(callable $callable): ExtensionQueue
     {
         $this->queue[] = $callable;
 
