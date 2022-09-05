@@ -17,7 +17,7 @@ $ composer require lepre/di
 
 ### Requirements
 
-This project works with PHP 7.2 or above.
+This project works with PHP 7.4 or above.
 
 ## Basic Usage
 
