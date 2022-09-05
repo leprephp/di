@@ -23,12 +23,12 @@ final class ExtensionQueue
     /**
      * @var array
      */
-    private $queue = [];
+    private array $queue = [];
 
     /**
      * @var Container
      */
-    private $container;
+    private Container $container;
 
     /**
      * @param Container $container
@@ -44,7 +44,7 @@ final class ExtensionQueue
      * @param callable $callable
      * @return $this
      */
-    public function add(callable $callable): ExtensionQueue
+    public function add(callable $callable): self
     {
         $this->queue[] = $callable;
 

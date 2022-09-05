@@ -26,27 +26,27 @@ final class Container implements ContainerInterface
     /**
      * @var array
      */
-    private $definitions = [];
+    private array $definitions = [];
 
     /**
      * @var array
      */
-    private $services = [];
+    private array $services = [];
 
     /**
      * @var array
      */
-    private $aliases = [];
+    private array $aliases = [];
 
     /**
      * @var ExtensionQueue[]
      */
-    private $extensionQueues = [];
+    private array $extensionQueues = [];
 
     /**
      * @var bool
      */
-    private $frozen = false;
+    private bool $frozen = false;
 
     /**
      * @inheritDoc
@@ -65,7 +65,7 @@ final class Container implements ContainerInterface
     /**
      * @inheritDoc
      */
-    public function has($id)
+    public function has($id): bool
     {
         return array_key_exists($this->getRealId($id), $this->definitions);
     }
@@ -77,7 +77,7 @@ final class Container implements ContainerInterface
      * @param mixed  $service
      * @return $this
      */
-    public function set(string $id, $service): Container
+    public function set(string $id, $service): self
     {
         if ($this->frozen) {
             throw new FrozenContainerException(
@@ -101,7 +101,7 @@ final class Container implements ContainerInterface
      * @param string $original
      * @return $this
      */
-    public function alias(string $alias, string $original): Container
+    public function alias(string $alias, string $original): self
     {
         $this->aliases[$alias] = $this->getRealId($original);
 
@@ -161,7 +161,7 @@ final class Container implements ContainerInterface
      * @return $this
      * @throws \InvalidArgumentException
      */
-    public function extend(string $id, callable $callable): Container
+    public function extend(string $id, callable $callable): self
     {
         if ($this->frozen) {
             throw new FrozenContainerException(
@@ -190,7 +190,7 @@ final class Container implements ContainerInterface
      * @param ServiceProviderInterface $provider
      * @return $this
      */
-    public function register(ServiceProviderInterface $provider): Container
+    public function register(ServiceProviderInterface $provider): self
     {
         if ($this->frozen) {
             throw new FrozenContainerException(
@@ -206,7 +206,7 @@ final class Container implements ContainerInterface
     /**
      * @return $this
      */
-    public function freeze(): Container
+    public function freeze(): self
     {
         $this->frozen = true;
 
