@@ -13,11 +13,13 @@ declare(strict_types=1);
 
 namespace Lepre\DI\Exception;
 
+use BadMethodCallException;
+
 /**
  * This exception is thrown when you try to extend the container, but it is already frozen.
  *
  * @author Daniele De Nobili <danieledenobili@gmail.com>
  */
-final class FrozenContainerException extends \BadMethodCallException
+final class FrozenContainerException extends BadMethodCallException
 {
 }

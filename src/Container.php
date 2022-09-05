@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace Lepre\DI;
 
+use InvalidArgumentException;
 use Lepre\DI\Exception\FrozenContainerException;
 use Psr\Container\ContainerInterface;
 
@@ -113,7 +114,7 @@ final class Container implements ContainerInterface
      *
      * @param string $id
      * @return mixed
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getNew(string $id)
     {
@@ -159,7 +160,7 @@ final class Container implements ContainerInterface
      * @param string   $id
      * @param callable $callable
      * @return $this
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function extend(string $id, callable $callable): self
     {
@@ -172,7 +173,7 @@ final class Container implements ContainerInterface
         $id = $this->getRealId($id);
 
         if (!array_key_exists($id, $this->definitions)) {
-            throw new \InvalidArgumentException("The service \"{$id}\" does not exist.");
+            throw new InvalidArgumentException("The service \"{$id}\" does not exist.");
         }
 
         if (!isset($this->extensionQueues[$id])) {

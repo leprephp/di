@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace Lepre\DI\Exception;
 
+use InvalidArgumentException;
 use Psr\Container\NotFoundExceptionInterface;
 
 /**
@@ -20,7 +21,7 @@ use Psr\Container\NotFoundExceptionInterface;
  *
  * @author Daniele De Nobili <danieledenobili@gmail.com>
  */
-final class NotFoundException extends \InvalidArgumentException implements NotFoundExceptionInterface
+final class NotFoundException extends InvalidArgumentException implements NotFoundExceptionInterface
 {
     /**
      * @param string          $id
