@@ -2,7 +2,7 @@
 
 # Lepre DI
 
-[![Build Status](https://travis-ci.org/leprephp/di.svg?branch=master)](https://travis-ci.org/leprephp/di)
+[![Test library](https://github.com/metaline/wp-api-client/actions/workflows/test-library.yml/badge.svg)](https://github.com/leprephp/di/actions)
 [![Coverage Status](https://coveralls.io/repos/github/leprephp/di/badge.svg?branch=master)](https://coveralls.io/github/leprephp/di?branch=master)
 
 A simple Dependency Injection Container, [PSR-11][psr11] compliant.
