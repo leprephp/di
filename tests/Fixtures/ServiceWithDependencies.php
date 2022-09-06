@@ -15,8 +15,8 @@ namespace Lepre\DI\Tests\Fixtures;
 
 final class ServiceWithDependencies
 {
-    public $foo;
-    public $bar;
+    public Service $foo;
+    public Invokable $bar;
 
     public function __construct(Service $foo, Invokable $bar)
     {

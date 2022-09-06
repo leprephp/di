@@ -15,19 +15,19 @@ namespace Lepre\DI\Tests\Fixtures;
 
 final class Service
 {
-    protected $parameter;
+    protected string $parameter = '';
 
-    public function setParameter($parameter)
+    public function setParameter(string $parameter)
     {
         $this->parameter = $parameter;
     }
 
-    public function concatenateParameter($string)
+    public function concatenateParameter(string $string)
     {
         $this->parameter .= $string;
     }
 
-    public function getParameter()
+    public function getParameter(): string
     {
         return $this->parameter;
     }

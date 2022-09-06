@@ -15,7 +15,7 @@ namespace Lepre\DI\Tests\Fixtures;
 
 final class Invokable
 {
-    public function __invoke()
+    public function __invoke(): Service
     {
         return new Service();
     }
