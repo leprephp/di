@@ -12,7 +12,7 @@ A simple Dependency Injection Container, [PSR-11][psr11] compliant.
 Install the latest version with [Composer][composer]:
 
 ```
-$ composer require lepre/di
+$ composer require lepre/di:dev-master
 ```
 
 ### Requirements
