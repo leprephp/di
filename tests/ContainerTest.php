@@ -65,13 +65,22 @@ final class ContainerTest extends TestCase
     /**
      * @covers \Lepre\DI\Exception\NotFoundException
      */
-    public function testGetCheckIfKeyIsPresent()
+    public function testGetChecksIfKeyIsPresent()
     {
         $this->expectException(NotFoundException::class);
         $this->expectExceptionMessage('The service "undefined" does not exist.');
 
         $container = new Container();
         $container->get('undefined');
+    }
+
+    public function testGetHonorsValues()
+    {
+        $container = new Container();
+        $service = new Service();
+        $container->set('service', $service);
+
+        $this->assertSame($service, $container->get('service'));
     }
 
     public function testGetHonorsNullValues()
@@ -240,9 +249,6 @@ final class ContainerTest extends TestCase
     {
         $container = new Container();
 
-        $this->assertFalse($container->has('original'));
-        $this->assertFalse($container->has('alias'));
-
         $container->set(
             'original',
             function () {
@@ -250,15 +256,9 @@ final class ContainerTest extends TestCase
             }
         );
 
-        $this->assertTrue($container->has('original'));
-        $this->assertFalse($container->has('alias'));
-
         $container->alias('alias', 'original');
 
-        $this->assertTrue($container->has('original'));
-        $this->assertTrue($container->has('alias'));
-        $this->assertSame($container->get('original'), $container->get('alias'));
-
+        // overwrite the alias
         $container->set(
             'alias',
             function () {
@@ -284,10 +284,15 @@ final class ContainerTest extends TestCase
 
         $this->assertInstanceOf(Service::class, $container->getNew('callable'));
         $this->assertNotSame($container->getNew('callable'), $container->getNew('callable'));
+    }
 
-        $service = [1, 2, 3];
-        $container->set('array', $service);
-        $this->assertEquals($service, $container->getNew('array'));
+    public function testGetNewHonorsValues()
+    {
+        $container = new Container();
+        $service = new Service();
+        $container->set('service', $service);
+
+        $this->assertSame($service, $container->getNew('service'));
     }
 
     /**
@@ -310,6 +315,15 @@ final class ContainerTest extends TestCase
             return new Service();
         };
 
+        $container->set('service', $service);
+
+        $this->assertSame($service, $container->raw('service'));
+    }
+
+    public function testRawHonorsValues()
+    {
+        $container = new Container();
+        $service = new Service();
         $container->set('service', $service);
 
         $this->assertSame($service, $container->raw('service'));
